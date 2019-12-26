@@ -1,6 +1,6 @@
 // http 모듈 읽기
 const http = require('http')
-const ctype = { 'Content-Type': 'text/html;charset=utf-8'}
+const ctype = { 'Content-Type': 'text/html;charset=utf-8' }
 
 // 웹 서버 실행
 const svr = http.createServer(handler) // 서버 생성
@@ -17,8 +17,8 @@ function handler (req, res) {
   }
   // 주사위 페이지 일 때
   if (url.substr(0, 6) === '/dice/') {
-      showDicePage(req, res)
-      return
+    showDicePage(req, res)
+    return
   }
   // 기타의 경우
   res.writeHead(404, ctype)
