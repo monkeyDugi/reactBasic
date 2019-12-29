@@ -21,6 +21,7 @@
 // 동기적 실행(순차적 실행)
 function fakeSetTimeout(callback, delay) {
   callback()
+
 }
 
 console.log(0)
