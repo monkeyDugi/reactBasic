@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- 리액트 라이브러리 -->
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <!-- JSX활성화 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 요소정의 -->
+    <div id="root"></div>
+
+    <!-- 스크립트 정의 -->
+    <script type="text/babel">
+      // 리액트로 DOM의 내용 변경
+      ReactDOM.render(
+        getDOM(),
+        document.getElementById('root')
+      )
+      // 요소 반환 함수
+      function getDOM() {
+        // 객체로 스타일을 지정
+        const css1 = {
+          // CSS 스타일
+          "color": 'red',
+          "background": '#f0f0ff',
+          "font-size": '2em'
+        }
+        const css2 = {
+          // 자바스크립트 스타일
+          color: 'blue',
+          background: '#fff0f0',
+          fontSize: '2em'
+        }
+        // JSX로 DOM 지정
+        return (
+          <div>
+            <p style={css1}>죄는 미워하되 사람은 미워하지 말라</p>
+            <p style={css2}>이것 또한 지나가리라</p>
+          </div>
+        )
+      }
+    </script>
+
+</body>
+</html>
