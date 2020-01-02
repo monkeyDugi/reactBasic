@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- 리액트 라이브러리 -->
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <!-- JSX활성화 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 요소정의 -->
+    <div id="root"></div>
+    <!-- 스크립트 정의 -->
+    <script type="text/babel">
+    // 컴포넌트 사용
+    const dom = <div>
+      <PhotoText image="pic1" label="오키나와에서의 하루"/>
+      <PhotoText image="pic2" label="오키나와 해변"/>
+      <PhotoText image="pic3" label="푸른바다"/>
+    </div>
+    // 리액트로 DOM내용 변경
+    ReactDOM.render(dom, document.getElementById('root'))
+    // 함수로 컴포넌트 정의
+    function PhotoText (props) {
+      const url = "img/" + props.image + ".jpeg"
+      const label = props.label
+      const boxStyle = {
+        border: "1px solid silver",
+        margin: "8px",
+        padding: "4px"
+      }
+      return <div style={boxStyle}>
+             <img src={url} width="128"/>
+             <span>{label}</span>
+      </div>
+    }
+    </script>
+
+</body>
+</html>
