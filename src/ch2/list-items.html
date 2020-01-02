@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- 리액트 라이브러리 -->
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <!-- JSX활성화 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 요소정의 -->
+    <div id="root"></div>
+    <!-- 스크립트 정의 -->
+    <script type="text/babel">
+    // 리스트 컴포넌트 정의
+    class RList extends React.Component {
+      render () {
+        // items 속성에 지정한 items 배열 사용
+        const items = this.props.items.split(',')
+        // 아이템 목록을 기반으로 li 요소 생성
+        const itemsObj = items.map(
+          (e) => {
+            return <li>{e}</li>
+          })
+        //타이틀
+        let title = this.props.title
+        if (!title) title = 'LIST'
+        // 렌더링 할 내용 반환
+        return (
+          <div>
+            <h3>{title}</h3>
+            <ul>{itemsObj}</ul>
+          </div>
+        )
+      }
+    }
+    // 컴포넌트 출력
+    ReactDOM.render(
+      <div>
+        <RList title="" items="React, VanilaJs, Java, Python"/>
+        <RList title="Color" items="Red,Green,Blue,Pink"/>
+      </div>,  
+        document.getElementById('root')
+    )
+    </script>
+
+</body>
+</html>
